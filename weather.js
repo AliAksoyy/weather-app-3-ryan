@@ -19,9 +19,22 @@ form.addEventListener("submit", (e)=> {
 
 //* get api func. (http method == verbs)
 
-const getWeatherDataFromApi = ()=> {
+const getWeatherDataFromApi = async ()=> {
         // alert("http request is gone")
       const tokenKey = DecryptStringAES(localStorage.getItem("tokenKey"))
       console.log(tokenKey)
+
+      const inputValue = input.ariaValueMax;
+      const units = "metric"
+      const lang = tr
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?=${inputValue}&appid=${tokenKey}&units=${units}&lang=${lang}`;
+
+        const responsive = await fetch(url).then((res)=> res.json())
+        console.log(responsive)
+        
+      
+
+
 }
 
