@@ -39,7 +39,7 @@ const getWeatherDataFromApi = async ()=> {
         
       
        const iconUrlAWS = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
-
+        
        const createdLi =document.createElement("li")
        createdLi.className = "city"
     createdLi.innerHTML = `<h2 class="city-name" data-name="${name}, ${
@@ -53,6 +53,6 @@ const getWeatherDataFromApi = async ()=> {
                 <img class="city-icon" src="${iconUrl}">
                 <figcaption>${weather[0].description}</figcaption>
             </figure>`;
-
+    list.prepend(createdLi)
 }
 
